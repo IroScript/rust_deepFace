@@ -4,19 +4,56 @@
 
 ---
 
-## ⚡ Quick Start - প্রথমে এই ৩টি Command চালান
+## ⚡ Quick Start - প্রথমবার Setup (Step by Step)
 
-### ১. Release Build করুন (অবশ্যই প্রথমে)
+### ১. Python Install করুন
+```powershell
+# Python 3.7+ install করুন (যদি না থাকে)
+python --version
+# অথবা
+py --version
+```
+
+### ২. Python Dependencies Install করুন
+```powershell
+pip install deepface tensorflow tf2onnx onnx mtcnn
+```
+
+### ৩. ONNX Models Export করুন
+```powershell
+python export_to_onnx.py
+```
+
+### ৪. Release Build করুন
 ```powershell
 cargo build --release
 ```
 
-### ২. Server চালান (.exe file হিসেবে)
+### ৫. Server চালান (.exe file হিসেবে)
 ```powershell
 .\target\release\deepface-rs.exe
 ```
 
-### ৩. Test করুন (নতুন terminal এ)
+### ৬. Test করুন (নতুন terminal এ)
+```powershell
+py test_all_faces.py
+```
+
+---
+
+## ⚡ পরবর্তীতে (Models থাকলে শুধু এই ৩টি)
+
+### ১. Release Build করুন
+```powershell
+cargo build --release
+```
+
+### ২. Server চালান
+```powershell
+.\target\release\deepface-rs.exe
+```
+
+### ৩. Test করুন
 ```powershell
 py test_all_faces.py
 ```
