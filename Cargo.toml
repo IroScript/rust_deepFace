@@ -1,0 +1,56 @@
+[package]
+name = "deepface-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Web framework
+axum = { version = "0.7", features = ["multipart"] }
+tokio = { version = "1", features = ["full"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors"] }
+
+# ONNX Runtime — Pure Rust implementation (no C bindings, thread-safe)
+tract-onnx = "0.21"
+tract-core = "0.21"
+
+# Tensor math — replaces NumPy entirely (must match tract's ndarray version)
+ndarray = { version = "0.16", features = ["rayon"] }
+ndarray-stats = "0.6"
+
+# Image loading/resize — replaces cv2.imread + cv2.resize
+image = { version = "0.25", features = ["jpeg", "png", "webp"] }
+
+# Affine transform math — replaces cv2.getRotationMatrix2D + cv2.warpAffine
+# We implement this manually with ndarray for zero-dependency alignment
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Base64 decode for JSON image payloads
+base64 = "0.22"
+
+# Error handling
+anyhow = "1"
+thiserror = "1"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Thread-safe lazy globals (model loaded once at startup, reused forever)
+once_cell = "1"
+
+# Parallel iterators (replaces Python's multiprocessing for NMS)
+rayon = "1"
+
+# CPU core detection for ONNX thread optimization
+num_cpus = "1"
+
+[profile.release]
+# Maximum speed — strip all debug info, aggressive inlining
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true

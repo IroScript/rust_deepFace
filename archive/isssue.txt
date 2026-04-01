@@ -1,0 +1,95 @@
+dekhun amar prompt.txt file ta abar porun, eihane aami asole ki cheyechhilam......ami cheyesilam deepface er raw code kivabe rust e convert hoy seita................ami eta  moteo ekdie bolini...maaser por maas shoto shoto test korar por e cheyechhilam..............karon ami accuracy almost 100% peyechhi.................amar mone hoy hubuhu converted hoyni.........eikhane same person chhilo....the two picture was pic of Anjelina Jolie...........However plz read it...prompt.txt............ebong ei repo ta dekho...............https://github.com/IroScript/attendance_3_ways/blob/main/attendance_v8.py..........etai amar project chhilo oisomoy...................C:\Users\Irak\Desktop\Rust_Deepface\attendance_v8.py locally o dilam,,,,dekho hubohu eivabe aami chai..................            
+
+            frame = self.video_frames[-1]  # Use last frame
+
+            obj = DeepFace.represent(
+
+                img_path=frame,
+
+                model_name='Facenet512',
+
+                detector_backend='mtcnn',
+
+                enforce_detection=True,
+
+                align=True
+
+            )
+
+            
+
+            if obj:
+
+                unknown_embedding = obj[0]['embedding']
+
+                etai somvoboto eita....ami hubuhu eita chai..............jodio raw code change korte hobe...........means deepface pipeline change korte hobe......but ei element gulo must thaktei hobe.cause eguloi amake 100% result dito......................jaihok ei puro file naa,,,,,only image verification part tutu dilam seitai dekhar jonno baki code gulo naa cause its may be 24000 lines plus file.................PS C:\Users\Irak\Desktop\Rust_Deepface> .\test_verify.ps1
+
+=== Face Verification Test ===
+
+Server: http://localhost:8080 
+
+✓ Found: test_images\face1.jpg
+
+✓ Found: test_images\face2.jpg
+
+Encoding images to base64...  
+
+✓ Image 1: 68207 bytes
+
+✓ Image 2: 94423 bytes
+
+Sending request to server...
+
+╔════════════════════════════════════════╗
+
+║        VERIFICATION RESULT             ║
+
+╚════════════════════════════════════════╝
+
+❌ NOT VERIFIED: Different Person
+
+Cosine Distance: 0.6209
+
+Threshold:       0.3
+
+Similarity:      37.91%
+
+Model:    Facenet512
+
+Detector: MTCNN
+
+Metric:   cosine
+
+─────────────────────────────────────────
+
+Interpretation: Clearly different persons
+
+─────────────────────────────────────────
+
+PS C:\Users\Irak\Desktop\Rust_Deepface>    = note: `AppError` has a derived impl for the trait `Debug`, but this is intentionanalysis
+
+ally ignored during dead code analysis
+
+generated 2 warnings
+
+    Finished `release` profile [optimized] target(s) in 0.73s
+
+     Running `target\release\deepface-rs.exe`
+
+2026-03-29T10:14:14.968457Z  INFO deepface_rs: Loading ONNX models with tract...
+
+2026-03-29T10:14:14.970481Z  INFO deepface_rs: Loading FaceNet512 ONNX model...
+
+2026-03-29T10:14:16.436072Z  INFO deepface_rs: Loading MTCNN 
+
+P-Net model...
+
+2026-03-29T10:14:16.480847Z  INFO deepface_rs: Loading MTCNN 
+
+R-Net model...
+
+2026-03-29T10:14:16.509866Z  INFO deepface_rs: Loading MTCNN 
+
+O-Net model...
+
+2026-03-29T10:14:16.544330Z  INFO deepface_rs: All models loaded. Starting Axum server on 0.0.0.0:8080..
