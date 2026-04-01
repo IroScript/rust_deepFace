@@ -28,6 +28,8 @@ git commit -m "your message here"
 git push origin main
 ```
 
+**IMPORTANT:** Always use English for git commit messages (not Bengali/Bangla).
+
 ### Step 2: Verify Push is in Cloud (200% Confirmation)
 
 #### Method 1: Compare Local and Remote Commit Hash ✅
